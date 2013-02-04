@@ -1,8 +1,7 @@
 'use strict';
 
-define(['lib/flight/lib/component',
-        'component_view/todoListItem'],
-    function(defineComponent, ToDoListItem) {
+define(['lib/flight/lib/component'],
+    function(defineComponent) {
 
     var todo = function() {
 
@@ -11,14 +10,12 @@ define(['lib/flight/lib/component',
         });
 
         this.newTodo = function(event, target) {
-            if(event.which === ENTER_KEY && $(target.el).val().trim()) {
-                console.log('New todo', $(target.el).val().trim());
+            var title = $(target.el).val().trim();
+            if(event.which === ENTER_KEY && title) {
+                this.trigger('uiNewTodoItemRequest', {
+                    title: title
+                });
 
-                var el = $('<li></li>');
-
-                el.appendTo(this.$node);
-
-                ToDoListItem.attachTo(el, { title: $(target.el).val().trim() });
                 // Reset the input's value
                 $(target.el).val('');
             }

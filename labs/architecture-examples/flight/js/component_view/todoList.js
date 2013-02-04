@@ -1,15 +1,22 @@
 'use strict';
 
-define(['lib/flight/lib/component'], function(defineComponent) {
+define(['lib/flight/lib/component',
+        'component_view/todoListItem'], function(defineComponent, todoListItem) {
 
     var todoList = function() {
 
         this.defaultAttrs({
-            toggleAllSelector: '#toggle-all'
+            toggleAllSelector: '#toggle-all',
+            listSelector: '#todo-list'
         });
 
         this.toggleAll = function() {
-            console.log('Toggle all');
+            this.trigger('uiToggleAll');
+        };
+
+        this.renderNewTodo = function(event, data) {
+            var todoListItemEl = $(data.markup).appendTo(this.$node.find(this.attr.listSelector));
+            todoListItem.attachTo(todoListItemEl, { title: data.title });
         };
 
         this.after('initialize', function() {
@@ -17,8 +24,7 @@ define(['lib/flight/lib/component'], function(defineComponent) {
                 'toggleAllSelector': this.toggleAll
             });
 
-            // Hidden by default
-            this.$node.addClass('hidden');
+            this.on(document, 'dataNewTodoItemRequestServed', this.renderNewTodo);
         });
 
     };
