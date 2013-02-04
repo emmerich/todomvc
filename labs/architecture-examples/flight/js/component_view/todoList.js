@@ -17,6 +17,7 @@ define(['lib/flight/lib/component',
         this.renderNewTodo = function(event, data) {
             var todoListItemEl = $(data.markup).appendTo(this.$node.find(this.attr.listSelector));
             todoListItem.attachTo(todoListItemEl, { title: data.title });
+            this.trigger('uiTodoListItemCreated');
         };
 
         this.after('initialize', function() {

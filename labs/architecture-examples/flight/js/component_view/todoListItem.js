@@ -14,7 +14,8 @@ define(['lib/flight/lib/component'],
         });
 
         this.destroy = function() {
-            console.log('Destroy');
+            this.trigger('uiTodoListItemDestroyed');
+            this.$node.remove();
         };
 
         this.handleCheckboxClick = function() {
@@ -23,13 +24,23 @@ define(['lib/flight/lib/component'],
         };
 
         this.handleToggleAll = function(event, data) {
-            this.completed = data.toggle;
-            this.toggle(this.completed);
+            if(this.completed !== data.toggle) {
+                this.completed = data.toggle;
+                this.toggle(this.completed);
+            }
         };
 
         this.toggle = function(toggle) {
             // Set the checkbox
             this.$node.find(this.attr.toggleSelector).attr('checked', toggle);
+
+            if(toggle) {
+                this.$node.addClass('completed');
+                this.trigger('uiTodoListItemCompleted');
+            } else {
+                this.$node.removeClass('completed');
+                this.trigger('uiTodoListItemUncompleted');
+            }
         };
 
         this.after('initialize', function() {
