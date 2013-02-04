@@ -47,19 +47,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="35" selection-start="2004" selection-end="2019" vertical-scroll-proportion="0.5390476">
+            <state line="48" column="35" selection-start="2004" selection-end="2019" vertical-scroll-proportion="-11.791667">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="todo.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="todo.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/component_view/todo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="56" selection-start="1601" selection-end="1601" vertical-scroll-proportion="0.0">
+            <state line="39" column="81" selection-start="1344" selection-end="1344" vertical-scroll-proportion="0.40983605">
               <folding />
             </state>
           </provider>
@@ -124,8 +124,8 @@
         <option value="$PROJECT_DIR$/js/component_view/todoList.js" />
         <option value="$PROJECT_DIR$/js/component_data/todo.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/component_view/todo.js" />
         <option value="$PROJECT_DIR$/js/component_view/todoListItem.js" />
+        <option value="$PROJECT_DIR$/js/component_view/todo.js" />
       </list>
     </option>
   </component>
@@ -511,13 +511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/component_view/todoList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="50" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/component_data/todo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="13" selection-start="132" selection-end="443" vertical-scroll-proportion="0.0">
@@ -532,9 +525,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/component_view/todo.js">
+    <entry file="file://$PROJECT_DIR$/js/component_view/todoListItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="56" selection-start="1601" selection-end="1601" vertical-scroll-proportion="0.0">
+        <state line="27" column="16" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="35" selection-start="2004" selection-end="2019" vertical-scroll-proportion="-11.791667">
           <folding />
         </state>
       </provider>
@@ -546,16 +546,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/component_view/todoListItem.js">
+    <entry file="file://$PROJECT_DIR$/js/component_view/todoList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="16" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0">
+        <state line="19" column="50" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/component_view/todo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="35" selection-start="2004" selection-end="2019" vertical-scroll-proportion="0.5390476">
+        <state line="39" column="81" selection-start="1344" selection-end="1344" vertical-scroll-proportion="0.40983605">
           <folding />
         </state>
       </provider>

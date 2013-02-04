@@ -37,6 +37,8 @@ define(['lib/flight/lib/component'],
             var buttonEl = this.$node.find(this.attr.completedButtonSelect);
             var prev = parseInt(buttonEl.text().split('(')[1].split(')')[0]);
 
+            this.trigger('uiRequestClearCompletedButton', { previousValue: prev });
+
             buttonEl.text('Clear completed (' + (prev + 1) + ')');
         };
 
