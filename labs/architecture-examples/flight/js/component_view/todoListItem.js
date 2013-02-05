@@ -43,6 +43,12 @@ define(['lib/flight/lib/component'],
             }
         };
 
+        this.clearIfCompleted = function() {
+            if(this.completed) {
+                this.destroy();
+            }
+        };
+
         this.after('initialize', function() {
             this.on('click', {
                 'destroySelector': this.destroy,
@@ -50,6 +56,7 @@ define(['lib/flight/lib/component'],
             });
 
             this.on(document, 'dataToggleAll', this.handleToggleAll);
+            this.on(document, 'dataRequestClearCompletedItems', this.clearIfCompleted);
         });
     };
 
