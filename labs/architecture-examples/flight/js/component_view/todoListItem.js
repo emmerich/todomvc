@@ -14,7 +14,7 @@ define(['lib/flight/lib/component'],
         });
 
         this.destroy = function() {
-            this.trigger('uiTodoListItemDestroyed');
+            this.trigger('uiTodoListItemDestroyed', { item: this });
             this.$node.remove();
         };
 
@@ -36,10 +36,10 @@ define(['lib/flight/lib/component'],
 
             if(toggle) {
                 this.$node.addClass('completed');
-                this.trigger('uiTodoListItemCompleted');
+                this.trigger('uiTodoListItemCompleted', { item : this });
             } else {
                 this.$node.removeClass('completed');
-                this.trigger('uiTodoListItemUncompleted');
+                this.trigger('uiTodoListItemUncompleted', { item: this });
             }
         };
 

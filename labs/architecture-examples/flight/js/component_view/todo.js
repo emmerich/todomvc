@@ -66,6 +66,41 @@ define(['lib/flight/lib/component'],
             this.trigger('uiRequestClearCompletedItems');
         };
 
+        this.handleItemDestroyed = function(ev, data) {
+            // When an item is destroyed,
+            // Subtract items left
+            this.decrementCounter();
+
+            // Reduce clear completed (if destroyed item was completed)
+            if(data.item.completed) {
+                this.decrementCompleted();
+            }
+        };
+
+        this.handleItemCreated = function() {
+            // When an item is created
+            // Increase items left
+            this.incrementCounter();
+        };
+
+        this.handleItemCompleted = function() {
+            // When an item is completed
+            // Reduce items left
+            this.decrementCounter();
+
+            // Increase clear completed
+            this.incrementCompleted();
+        };
+
+        this.handleItemUncompleted = function() {
+            // When an item is uncompleted
+            // Increase items left
+            this.incrementCounter();
+
+            // Reduce completed count
+            this.decrementCompleted();
+        };
+
         this.after('initialize', function() {
             this.on('keypress', {
                 'newTodoSelector': this.newTodo
@@ -75,10 +110,11 @@ define(['lib/flight/lib/component'],
                 'completedButtonSelect': this.clearCompleted
             });
 
-            this.on(document, 'uiTodoListItemDestroyed uiTodoListItemCompleted', this.decrementCounter);
-            this.on(document, 'uiTodoListItemCreated uiTodoListItemUncompleted', this.incrementCounter);
-            this.on(document, 'uiTodoListItemCompleted', this.incrementCompleted);
-            this.on(document, 'uiTodoListItemUncompleted', this.decrementCompleted);
+            this.on(document, 'uiTodoListItemDestroyed', this.handleItemDestroyed);
+            this.on(document, 'uiTodoListItemCreated', this.handleItemCreated);
+            this.on(document, 'uiTodoListItemCompleted', this.handleItemCompleted);
+            this.on(document, 'uiTodoListItemUncompleted', this.handleItemUncompleted);
+
             this.on(document, 'dataRequestClearCompletedButtonServed', this.renderClearCompletedButton);
         });
     };
