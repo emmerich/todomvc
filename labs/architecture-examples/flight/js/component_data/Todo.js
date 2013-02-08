@@ -28,11 +28,19 @@ define(
             this.decrementCompletedCount = function() {
                 this.completedCount--;
                 this.triggerButtonUpdate();
+
+                if(this.completedCount <= 0) {
+                    this.trigger('hideClearCompletedButton');
+                }
             };
 
             this.incrementCompletedCount = function() {
                 this.completedCount++;
                 this.triggerButtonUpdate();
+
+                if(this.completedCount > 0) {
+                    this.trigger('showClearCompletedButton');
+                }
             };
 
             this.handleTodoItemDestroyed = function(event, data) {
