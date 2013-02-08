@@ -32,15 +32,16 @@ define(
             };
 
             this.decrementCount = function() {
-                var strongEl = this.$node.find('strong'),
-                    val = parseInt(strongEl.text()) - 1;
-
-                this.$node.html('<strong>' + val + '</strong> ' + this.getPlural(val) + ' left');
+                this.modifyCount(function(val) { return val - 1; });
             };
 
             this.incrementCount = function() {
+                this.modifyCount(function(val) { return val + 1; });
+            };
+
+            this.modifyCount = function(modifier) {
                 var strongEl = this.$node.find('strong'),
-                    val = parseInt(strongEl.text()) + 1;
+                    val = modifier(parseInt(strongEl.text()));
 
                 this.$node.html('<strong>' + val + '</strong> ' + this.getPlural(val) + ' left');
             };
