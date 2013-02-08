@@ -30,7 +30,6 @@ define(
              * Update the text value of the button.
              */
             this.updateButtonText = function(event, data) {
-                this.show();
                 this.$node.text(data.markup);
             };
         }

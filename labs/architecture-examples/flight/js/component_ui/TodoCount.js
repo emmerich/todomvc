@@ -13,6 +13,7 @@ define(
          * @constructor
          */
         function TodoCount() {
+
             this.after('initialize', function() {
                 this.on(document, 'todoListItemDestroyed', this.handleItemDestroyed);
                 this.on(document, 'todoListItemCreated', this.incrementCount);
@@ -31,14 +32,22 @@ define(
             };
 
             this.decrementCount = function() {
-                var strongEl = this.$node.find('strong');
-                strongEl.text(parseInt(strongEl.text()) - 1);
+                var strongEl = this.$node.find('strong'),
+                    val = parseInt(strongEl.text()) - 1;
+
+                this.$node.html('<strong>' + val + '</strong> ' + this.getPlural(val) + ' left');
             };
 
             this.incrementCount = function() {
-                var strongEl = this.$node.find('strong');
-                strongEl.text(parseInt(strongEl.text()) + 1);
+                var strongEl = this.$node.find('strong'),
+                    val = parseInt(strongEl.text()) + 1;
+
+                this.$node.html('<strong>' + val + '</strong> ' + this.getPlural(val) + ' left');
             };
+
+            this.getPlural = function(val) {
+                return val === 1 ? 'item' : 'items';
+            }
         }
     }
 );
