@@ -10,20 +10,25 @@ define(
         'component_ui/TodoCount',
         'component_data/Todo',
         'component_data/TodoList',
-        'component_data/TodoListItem'
+        'component_data/TodoListItem',
+        'component_data/LocalStorage'
     ],
 
     function(ToDo, ToDoList, ClearCompletedButton, TodoCount,
-        ToDoData, ToDoListData, ToDoListItemData) {
+        ToDoData, ToDoListData, ToDoListItemData, LocalStorage) {
 
     var initialize = function() {
         ToDoData.attachTo(document);
         ToDoListData.attachTo(document);
         ToDoListItemData.attachTo(document);
+        LocalStorage.attachTo(document);
+
         ToDo.attachTo('#todoapp');
         ToDoList.attachTo('#main');
         ClearCompletedButton.attachTo('#clear-completed');
         TodoCount.attachTo('#todo-count');
+
+        $(document).trigger('loadFromStorage');
     };
 
     // Start the app when the document is loaded

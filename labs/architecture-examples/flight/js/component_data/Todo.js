@@ -14,7 +14,7 @@ define(
             this.completedCount = 0;
 
             this.triggerButtonUpdate = function() {
-                this.trigger('dataUpdateClearCompletedButton', {
+                this.trigger('updateClearCompletedButtonRequest', {
                     markup: this.renderClearCompletedButton(this.completedCount)
                 });
             };
@@ -42,16 +42,16 @@ define(
             };
 
             this.clearCompletedItems = function() {
-                this.trigger('dataClearCompletedItems');
+                this.trigger('clearCompletedItems');
             };
 
             this.after('initialize', function() {
-                this.on('uiClearCompletedItems', this.clearCompletedItems);
+                this.on('clearCompletedItemsRequest', this.clearCompletedItems);
 
                 // We care about when items are destroyed, completed and uncompleted
-                this.on('uiTodoListItemDestroyed', this.handleTodoItemDestroyed);
-                this.on('uiTodoListItemCompleted', this.incrementCompletedCount);
-                this.on('uiTodoListItemUncompleted', this.decrementCompletedCount);
+                this.on('todoListItemDestroyed', this.handleTodoItemDestroyed);
+                this.on('todoListItemCompleted', this.incrementCompletedCount);
+                this.on('todoListItemUncompleted', this.decrementCompletedCount);
             });
         }
 });

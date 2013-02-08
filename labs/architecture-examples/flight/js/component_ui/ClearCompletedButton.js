@@ -16,14 +16,14 @@ define(
         function ClearCompletedButton() {
             this.after('initialize', function() {
                 this.on('click', this.clearCompletedTodoItems);
-                this.on(document, 'dataUpdateClearCompletedButton', this.updateButtonText);
+                this.on(document, 'updateClearCompletedButtonRequest', this.updateButtonText);
             });
 
             /**
              * Trigger a request to clear all completed items.
              */
             this.clearCompletedTodoItems = function() {
-                this.trigger('uiClearCompletedItems');
+                this.trigger('clearCompletedItemsRequest');
             };
 
             /**

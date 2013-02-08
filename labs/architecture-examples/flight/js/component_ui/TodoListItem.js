@@ -33,8 +33,10 @@ define(
                 });
 
                 // Respond to toggling all items and deletion of all completed items.
-                this.on(document, 'dataToggleAll', this.toggle);
-                this.on(document, 'dataClearCompletedItems', this.destroyIfCompleted);
+                this.on(document, 'toggleAll', this.toggle);
+                this.on(document, 'clearCompletedItems', this.destroyIfCompleted);
+
+                this.toggle(null, { toggle: this.attr.completed });
             });
 
             /**
@@ -42,7 +44,7 @@ define(
              * DOM.
              */
             this.destroy = function() {
-                this.trigger('uiTodoListItemDestroyed', { item: this });
+                this.trigger('todoListItemDestroyed', { item: this });
                 this.$node.remove();
             };
 
@@ -74,16 +76,21 @@ define(
                     // Update our internal completed value
                     this.completed = toggle;
 
+                    this.trigger('todoListItemChanged', {
+                        id : this.attr.id,
+                        completed: this.completed
+                    });
+
                     // Set the checkbox
                     this.$node.find(this.attr.toggleSelector).attr('checked', toggle);
 
                     // Update the classes and trigger the appropriate event
                     if(toggle) {
                         this.$node.addClass('completed');
-                        this.trigger('uiTodoListItemCompleted', { item : this });
+                        this.trigger('todoListItemCompleted', { item : this });
                     } else {
                         this.$node.removeClass('completed');
-                        this.trigger('uiTodoListItemUncompleted', { item: this });
+                        this.trigger('todoListItemUncompleted', { item: this });
                     }
                 }
             };

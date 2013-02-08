@@ -17,7 +17,7 @@ define(
         function TodoList() {
             this.after('initialize', function() {
                 this.on('click', { 'toggleAllSelector': this.toggleAll });
-                this.on(document, 'dataNewTodoItemRequestServed', this.renderNewTodo);
+                this.on(document, 'newTodoItemRenderRequest', this.renderNewTodo);
             });
 
             this.defaultAttrs({
@@ -29,7 +29,7 @@ define(
              * Tell the todo list items to toggle themselves when toggle all is pressed.
              */
             this.toggleAll = function() {
-                this.trigger('uiToggleAll');
+                this.trigger('toggleAllRequest');
             };
 
             /**
@@ -42,9 +42,9 @@ define(
                 var todoListItemEl = $(data.markup).appendTo(this.$node.find(this.attr.listSelector));
 
                 // Attach a new TodoListItem component to the element
-                TodoListItem.attachTo(todoListItemEl, { title: data.title });
+                TodoListItem.attachTo(todoListItemEl, data);
 
-                this.trigger('uiTodoListItemCreated');
+                this.trigger('todoListItemCreated', data);
             };
         }
 });

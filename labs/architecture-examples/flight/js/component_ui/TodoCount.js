@@ -14,10 +14,10 @@ define(
          */
         function TodoCount() {
             this.after('initialize', function() {
-                this.on(document, 'uiTodoListItemDestroyed', this.handleItemDestroyed);
-                this.on(document, 'uiTodoListItemCreated', this.incrementCount);
-                this.on(document, 'uiTodoListItemCompleted', this.decrementCount);
-                this.on(document, 'uiTodoListItemUncompleted', this.incrementCount);
+                this.on(document, 'todoListItemDestroyed', this.handleItemDestroyed);
+                this.on(document, 'todoListItemCreated', this.incrementCount);
+                this.on(document, 'todoListItemCompleted', this.decrementCount);
+                this.on(document, 'todoListItemUncompleted', this.incrementCount);
             });
 
             /**

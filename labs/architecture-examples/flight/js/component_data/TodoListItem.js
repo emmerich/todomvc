@@ -12,9 +12,18 @@ define(
 
         function TodoListItem() {
             this.serveNewTodoItemRequest = function(event, data) {
-                this.trigger('dataNewTodoItemRequestServed', {
+                this.trigger('storeNewTodoItem', {
+                    title: data.title,
+                    completed: false
+                });
+            };
+
+            this.newTodoItemRenderRequest = function(event, data) {
+                this.trigger('newTodoItemRenderRequest', {
                     markup: this.renderTodoItem(data.title),
-                    title: data.title
+                    title: data.title,
+                    id: data.id,
+                    completed: data.completed
                 });
             };
 
@@ -25,7 +34,8 @@ define(
             };
 
             this.after('initialize', function() {
-                this.on('uiNewTodoItemRequest', this.serveNewTodoItemRequest);
+                this.on('newTodoItemRequest', this.serveNewTodoItemRequest);
+                this.on('newTodoItemStored todoItemLoadedFromStorage', this.newTodoItemRenderRequest);
             });
         }
 });

@@ -37,7 +37,7 @@ define(
                 if(event.which === ENTER_KEY && title) {
 
                     // Send an event requesting the new todo item be created with the given title.
-                    this.trigger('uiNewTodoItemRequest', {
+                    this.trigger('newTodoItemRequest', {
                         title: title
                     });
 

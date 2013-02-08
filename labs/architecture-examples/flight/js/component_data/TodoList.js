@@ -15,13 +15,13 @@ define(
             this.toggleAll = function() {
                 this.toggleAllStatus = !this.toggleAllStatus;
 
-                this.trigger('dataToggleAll', {
+                this.trigger('toggleAll', {
                     toggle: this.toggleAllStatus
                 });
             };
 
             this.after('initialize', function() {
-                this.on('uiToggleAll', this.toggleAll);
+                this.on('toggleAllRequest', this.toggleAll);
             });
         }
 });
