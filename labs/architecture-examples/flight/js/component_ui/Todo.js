@@ -14,6 +14,8 @@ define(
          * @constructor
          */
         function Todo() {
+            this.footerVisible = false;
+
             this.defaultAttrs({
                 newTodoSelector: '#new-todo',
                 counterSelector: '#todo-count'
@@ -23,6 +25,11 @@ define(
                 this.on('keypress', {
                     'newTodoSelector': this.handleNewTodoItemRequest
                 });
+
+                this.on(document, 'todoListPopulated', this.showFooter);
+                this.on(document, 'todoListEmptied', this.hideFooter);
+
+                this.hideFooter();
             });
 
             /**
@@ -44,6 +51,20 @@ define(
                     // Reset the input's value
                     $(target.el).val('');
 
+                }
+            };
+
+            this.showFooter = function() {
+                if(!this.footerVisible) {
+                    this.$node.find('#footer').removeClass('hidden');
+                    this.footerVisible = true;
+                }
+            };
+
+            this.hideFooter = function() {
+                if(this.footerVisible) {
+                    this.$node.find('#footer').addClass('hidden');
+                    this.footerVisible = false;
                 }
             };
         }

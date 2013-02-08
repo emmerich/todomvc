@@ -15,9 +15,16 @@ define(
          * @constructor
          */
         function TodoList() {
+            this.visible = false;
+
             this.after('initialize', function() {
                 this.on('click', { 'toggleAllSelector': this.toggleAll });
                 this.on(document, 'newTodoItemRenderRequest', this.renderNewTodo);
+
+                this.on(document, 'todoListEmptied', this.hide);
+                this.on(document, 'todoListPopulated', this.show);
+
+                this.hide();
             });
 
             this.defaultAttrs({
@@ -45,6 +52,21 @@ define(
                 TodoListItem.attachTo(todoListItemEl, data);
 
                 this.trigger('todoListItemCreated', data);
+            };
+
+            this.show = function() {
+                if(!this.visible) {
+                    this.$node.removeClass('hidden');
+                    this.visible = true;
+                }
+            };
+
+            this.hide = function() {
+                if(this.visible) {
+                    this.$node.addClass('hidden');
+                    this.visible = false;
+                }
+
             };
         }
 });
