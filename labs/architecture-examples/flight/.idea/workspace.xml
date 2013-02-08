@@ -41,16 +41,16 @@
       <file leaf-file-name="ClearCompletedButton.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/component_ui/ClearCompletedButton.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="56" selection-start="846" selection-end="846" vertical-scroll-proportion="0.0">
+            <state line="34" column="14" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Todo.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Todo.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/component_ui/Todo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="0" selection-start="2196" selection-end="2196" vertical-scroll-proportion="0.8642534">
+            <state line="16" column="38" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -59,7 +59,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="22" selection-start="601" selection-end="601" vertical-scroll-proportion="-11.875">
+            <state line="19" column="36" selection-start="615" selection-end="615" vertical-scroll-proportion="-11.875">
               <folding />
             </state>
           </provider>
@@ -68,7 +68,7 @@
       <file leaf-file-name="Todo.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/component_data/Todo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="19" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0">
+            <state line="29" column="16" selection-start="886" selection-end="886" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -77,7 +77,7 @@
       <file leaf-file-name="TodoList.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/component_data/TodoList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="39" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0">
+            <state line="26" column="48" selection-start="637" selection-end="637" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -92,10 +92,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TodoList.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="TodoList.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/component_ui/TodoList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="24" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0">
+            <state line="17" column="32" selection-start="479" selection-end="479" vertical-scroll-proportion="0.23642534">
               <folding />
             </state>
           </provider>
@@ -123,19 +123,19 @@
         <option value="$PROJECT_DIR$/js/component_viewmodel/TodoList.js" />
         <option value="$PROJECT_DIR$/js/component_viewmodel/TodoCount.js" />
         <option value="$PROJECT_DIR$/js/component_viewmodel/TodoListItem.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/lib/require/require.js" />
         <option value="$PROJECT_DIR$/js/component_data/Store.js" />
         <option value="$PROJECT_DIR$/js/app.js" />
-        <option value="$PROJECT_DIR$/js/component_data/Todo.js" />
         <option value="$PROJECT_DIR$/js/component_data/TodoListItem.js" />
-        <option value="$PROJECT_DIR$/js/component_ui/ClearCompletedButton.js" />
         <option value="$PROJECT_DIR$/js/component_ui/TodoCount.js" />
         <option value="$PROJECT_DIR$/js/component_ui/TodoListItem.js" />
         <option value="$PROJECT_DIR$/js/component_data/LocalStorage.js" />
         <option value="$PROJECT_DIR$/js/component_data/TodoList.js" />
-        <option value="$PROJECT_DIR$/js/component_ui/TodoList.js" />
+        <option value="$PROJECT_DIR$/js/component_data/Todo.js" />
+        <option value="$PROJECT_DIR$/js/component_ui/ClearCompletedButton.js" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/component_ui/Todo.js" />
+        <option value="$PROJECT_DIR$/js/component_ui/TodoList.js" />
       </list>
     </option>
   </component>
@@ -411,30 +411,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/component_ui/TodoCount.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="36" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/component_data/Todo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="19" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/component_data/LocalStorage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="41" selection-start="277" selection-end="293" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/component_ui/ClearCompletedButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="56" selection-start="846" selection-end="846" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -453,30 +432,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/component_ui/TodoList.js">
+    <entry file="file://$PROJECT_DIR$/js/component_ui/TodoCount.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="24" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0">
+        <state line="19" column="36" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/component_data/TodoList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="39" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0">
+        <state line="26" column="48" selection-start="637" selection-end="637" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/component_data/Todo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="16" selection-start="886" selection-end="886" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="22" selection-start="601" selection-end="601" vertical-scroll-proportion="-11.875">
+        <state line="19" column="36" selection-start="615" selection-end="615" vertical-scroll-proportion="-11.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/component_ui/ClearCompletedButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="14" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/component_ui/Todo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="0" selection-start="2196" selection-end="2196" vertical-scroll-proportion="0.8642534">
+        <state line="16" column="38" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/component_ui/TodoList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="32" selection-start="479" selection-end="479" vertical-scroll-proportion="0.23642534">
           <folding />
         </state>
       </provider>
