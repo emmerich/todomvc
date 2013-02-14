@@ -52,6 +52,7 @@ define(
                 TodoListItem.attachTo(todoListItemEl, data);
 
                 this.trigger('todoListItemCreated', data);
+                this.trigger('reapplyFilterRequest');
             };
 
             this.show = function() {

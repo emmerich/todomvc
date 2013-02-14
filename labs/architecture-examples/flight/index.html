@@ -26,6 +26,17 @@
     <footer id="footer" class="hidden">
         <!-- This should be `0 items left` by default -->
         <span id="todo-count"><strong>0</strong> items left</span>
+        <ul id="filters">
+            <li>
+                <a class="selected" href="#/">All</a>
+            </li>
+            <li>
+                <a href="#/active">Active</a>
+            </li>
+            <li>
+                <a href="#/completed">Completed</a>
+            </li>
+        </ul>
         <button id="clear-completed" class="hidden">Clear completed (0)</button>
     </footer>
 </section>
@@ -36,6 +47,7 @@
 </footer>
 <!-- Scripts here. Don't remove this ↓ -->
 <script src="../../../assets/base.js"></script>
+<script src="../../../assets/director.min.js"></script>
 <script src="js/lib/jquery/jquery-1.8.3.min.js"></script>
 <script data-main="js/app" src="js/lib/require/require.js"></script>
 </body>

@@ -36,6 +36,10 @@ define(
                 this.on(document, 'toggleAll', this.toggle);
                 this.on(document, 'clearCompletedItems', this.destroyIfCompleted);
 
+                this.on(document, 'showCompletedItems', this.showIfCompleted);
+                this.on(document, 'showActiveItems', this.showIfActive);
+                this.on(document, 'showAllItems', this.show);
+
                 this.toggle(null, { toggle: this.attr.completed });
             });
 
@@ -55,6 +59,30 @@ define(
                 if(this.completed) {
                     this.destroy();
                 }
+            };
+
+            this.showIfCompleted = function() {
+                if(this.completed) {
+                    this.show();
+                } else {
+                    this.hide();
+                }
+            };
+
+            this.showIfActive = function() {
+                if(this.completed) {
+                    this.hide();
+                } else {
+                    this.show();
+                }
+            };
+
+            this.show = function() {
+                this.$node.removeClass('hidden');
+            };
+
+            this.hide = function() {
+                this.$node.addClass('hidden');
             };
 
             /**
@@ -92,6 +120,8 @@ define(
                         this.$node.removeClass('completed');
                         this.trigger('todoListItemUncompleted', { item: this });
                     }
+
+                    this.trigger('reapplyFilterRequest');
                 }
             };
         }

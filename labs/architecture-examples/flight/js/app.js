@@ -11,17 +11,19 @@ define(
         'component_data/Todo',
         'component_data/TodoList',
         'component_data/TodoListItem',
-        'component_data/LocalStorage'
+        'component_data/LocalStorage',
+        'component_data/TodoRouter'
     ],
 
     function(ToDo, ToDoList, ClearCompletedButton, TodoCount,
-        ToDoData, ToDoListData, ToDoListItemData, LocalStorage) {
+        ToDoData, ToDoListData, ToDoListItemData, LocalStorage, TodoRouter) {
 
     var initialize = function() {
         ToDoData.attachTo(document);
         ToDoListData.attachTo(document);
         ToDoListItemData.attachTo(document);
         LocalStorage.attachTo(document);
+        TodoRouter.attachTo(document);
 
         ToDo.attachTo('#todoapp');
         ToDoList.attachTo('#main');

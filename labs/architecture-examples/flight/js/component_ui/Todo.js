@@ -18,7 +18,10 @@ define(
 
             this.defaultAttrs({
                 newTodoSelector: '#new-todo',
-                counterSelector: '#todo-count'
+                counterSelector: '#todo-count',
+                showAllLink: '#filters a[href="#/"]',
+                showActiveLink: '#filters a[href="#/active"]',
+                showCompletedLink: '#filters a[href="#/completed"]'
             });
 
             this.after('initialize', function() {
@@ -28,6 +31,8 @@ define(
 
                 this.on(document, 'todoListPopulated', this.showFooter);
                 this.on(document, 'todoListEmptied', this.hideFooter);
+
+                this.on(document, 'showActiveItems showCompletedItems showAllItems', this.highlightFooterLink);
 
                 this.hideFooter();
             });
@@ -66,6 +71,25 @@ define(
                     this.$node.find('#footer').addClass('hidden');
                     this.footerVisible = false;
                 }
+            };
+
+            this.highlightFooterLink = function(event) {
+                var toShow;
+
+                switch(event.type) {
+                    case 'showAllItems':
+                        toShow = this.attr.showAllLink;
+                        break;
+                    case 'showCompletedItems':
+                        toShow = this.attr.showCompletedLink;
+                        break;
+                    case 'showActiveItems':
+                        toShow = this.attr.showActiveLink;
+                        break;
+                }
+
+                this.$node.find('#filters a.selected').removeClass('selected');
+                this.$node.find(toShow).addClass('selected');
             };
         }
 });
